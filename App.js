@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import Home from './screens/home';
 import {AppLoading} from 'expo';
-import Navigator from './routes/homeStack';
+import Navigator from './routes/drawer';
 
 // import About from './screens/about'
 // import ReviewDetails from './screens/reviewDetails'
