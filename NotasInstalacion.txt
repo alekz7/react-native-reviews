@@ -1,0 +1,20 @@
+Para instalar 
+expo install react-native-gesture-handler react-native-reanimated
+Se tuvo que abrir un powershell con permisos de administrador y cambiar una polica de ejecucion de scripts
+Get-ExecutionPolicy
+Restricted
+z
+Get-ExecutionPolicy
+Unrestricted
+
+Despues de esto ya permite instalar lo requerido para la navegacion en react native (stack navigator)
+Despues de esto se regreso la politica a restricted para mantener la seguridad
+
+Unable to resolve "react-native-safe-area-context"
+expo install react-native-safe-area-context
+
+Unable to resolve "@react-native-community/masked-view"
+expo install @react-native-community/masked-view
+
+Unable to resolve "react-native-screens" 
+expo install react-native-screens
