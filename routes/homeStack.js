@@ -1,27 +1,35 @@
-import {createStackNavigator} from 'react-navigation-stack';
-import Home from '../screens/home'
-import ReviewDetails from '../screens/reviewDetails'
+import { createStackNavigator } from 'react-navigation-stack';
+import React from 'react';
+import Header from '../shared/header';
+import Home from '../screens/home';
+import ReviewDetails from '../screens/reviewDetails';
+
 const screens = {
-  Home:{
+  Home: {
     screen: Home,
-    navigationOptions:{
-      title: 'Zona de Comidas',      
-      // headerStyle: {backgroundColor: '#333'}
+    navigationOptions: ({ navigation }) => {
+      return {
+        headerTitle: () => <Header title='GameZone' navigation={navigation} />
+      }
+    },
+  },
+  ReviewDetails: {
+    screen: ReviewDetails,
+    navigationOptions: {
+      title: 'Review Details',
     }
   },
-  RevDetails:{
-    screen:ReviewDetails,
-    navigationOptions:{
-      title: 'Detalle de comida',
-      // headerStyle: {backgroundColor: '#eee'}
-    }
-  }
-}
+};
 
-const HomeStack = createStackNavigator(screens,{
-  defaultNavigationOptions:{
+// home stack navigator screens
+const HomeStack = createStackNavigator(screens, {
+  defaultNavigationOptions: {
+    // headerTitleAlign: 'center', //funciono mayo 2020
     headerTintColor: '#444',
-    headerStyle: {backgroundColor: 'gold', height:60}
+    headerStyle: { backgroundColor: '#eee', height: 60 }
   }
 });
+
 export default HomeStack;
+
+

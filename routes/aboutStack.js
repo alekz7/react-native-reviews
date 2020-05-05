@@ -1,21 +1,25 @@
-import {createStackNavigator} from 'react-navigation-stack';
-
-import About from '../screens/about'
+import { createStackNavigator } from 'react-navigation-stack';
+import React from 'react';
+import Header from '../shared/header';
+import About from '../screens/about';
 
 const screens = {
-  About:{
+  About: {
     screen: About,
-    navigationOptions:{
-      title: 'Acerca de revision de comidas',      
-      // headerStyle: {backgroundColor: '#333'}
-    }
-  }
+    navigationOptions: ({ navigation }) => {
+      return {
+        headerTitle: () => <Header title='About GameZone' navigation={navigation} />
+      }
+    },
+  },
 }
 
-const AboutStack = createStackNavigator(screens,{
-  defaultNavigationOptions:{
+const AboutStack = createStackNavigator(screens, {
+  defaultNavigationOptions: {
+    // headerTitleAlign: 'center', //funciono mayo 2020
     headerTintColor: '#444',
-    headerStyle: {backgroundColor: 'gold', height:60}
+    headerStyle: { backgroundColor: '#eee', height: 60 },
   }
 });
+
 export default AboutStack;
