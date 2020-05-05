@@ -21,7 +21,7 @@ export default function Home({ navigation }) {
     setReviews((currentReviews)=>{
       return [review,...currentReviews];
     });
-    setModalOpen(false);
+    setModalVisible(false);
   }
 
   return (
